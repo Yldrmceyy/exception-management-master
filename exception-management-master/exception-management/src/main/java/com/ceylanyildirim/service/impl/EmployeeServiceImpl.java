@@ -2,6 +2,9 @@ package com.ceylanyildirim.service.impl;
 
 import com.ceylanyildirim.dto.DtoDepartment;
 import com.ceylanyildirim.dto.DtoEmployee;
+import com.ceylanyildirim.exception.BaseException;
+import com.ceylanyildirim.exception.ErrorMessage;
+import com.ceylanyildirim.exception.MessageType;
 import com.ceylanyildirim.model.Department;
 import com.ceylanyildirim.model.Employee;
 import com.ceylanyildirim.repository.EmployeeRepository;
@@ -27,7 +30,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
         Optional<Employee> optional= employeeRepository.findById(id);
         if(optional.isEmpty()) {
-            return null;
+            throw new BaseException(new ErrorMessage(MessageType.NO_RECORD_EXIST,id.toString()));
         }
         Employee employee= optional.get();
         Department department=employee.getDepartment();
