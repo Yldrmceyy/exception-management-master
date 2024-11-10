@@ -31,6 +31,8 @@ public class EmployeeServiceImpl implements IEmployeeService {
         }
         Employee employee= optional.get();
         Department department=employee.getDepartment();
+
+        //dto a cevır
         BeanUtils.copyProperties(employee,dtoEmployee);
         BeanUtils.copyProperties(department,dtoDepartment);
 
