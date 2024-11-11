@@ -7,6 +7,7 @@ public enum MessageType {
 
     NO_RECORD_EXIST("1001","Kayıt Bulunamadı"),
     GENERAL_EXCEPTION("9999", "Genel Bir Hata Oluştu");
+
     private  String code;
     private String message;
 
