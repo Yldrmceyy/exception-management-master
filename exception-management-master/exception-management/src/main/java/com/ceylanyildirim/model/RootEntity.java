@@ -15,7 +15,7 @@ public class RootEntity<T> {
     private String errorMessage;
     private  T data;
 
-    public <T>RootEntity <T> ok(T data){
+    public static  <T>RootEntity <T> ok(T data){
         RootEntity<T> rootEntity=new RootEntity<>();
         rootEntity.setData(data);
         rootEntity.setResult(true);
@@ -25,7 +25,7 @@ public class RootEntity<T> {
     }
 
 
-    public <T>RootEntity <T> error(String errorMessage){
+    public static <T>RootEntity <T> error(String errorMessage){
         RootEntity<T> rootEntity=new RootEntity<>();
         rootEntity.setData(null);
         rootEntity.setResult(false);
